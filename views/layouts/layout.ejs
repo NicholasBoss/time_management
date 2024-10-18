@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <div id="content">
+
+        <div id="wrapper">
+            <%- include('../partials/header')  %>
+            <button id="menu" aria-label="hamburger-menu"></button>
+            <%- include('../partials/navigation')  %>
+        </div>
+
+        <main>
+            <%- body %>
+        </main>
+
+        <%- include('../partials/footer')  %>
+    </div>
+</body>
+</html>

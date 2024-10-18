@@ -1,0 +1,9 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <p><%= message %></p>
+    
+    <p>This site is currently being built. We apologize for the inconvenience.</p>
+    <p>To get out of this doughnut hole, Click <a href="/" title="Go Home">Here</a></p>
+<% } else {
+    res.redirect('/')
+} %>
