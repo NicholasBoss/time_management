@@ -1,7 +1,21 @@
-<h1></h1>
 <%- messages() %>
 
+<script src="/js/togglePass.js" defer></script>
+    <form action="/account/login" method="post">
+        <div class="container">
+            <label><b>Email:</b>
+            <input type="email" id="email" name="account_email" required 
+                            placeholder="Enter Email"
+                            value=""></label><br>
+            <label><b>Password:</b>
+                <input type="password" id="password" name="account_password" required placeholder="Enter Password"value="">
+                <i class="eye-toggle" id="togglePass">
+                    <img id="passImg" src="/images/icons/eye-regular.svg" alt="Password Eye">
+                </i>
+            </label><br>
+                        <!-- SET URL that prompted login -->
 
-<p></p>
-
-<p></p>
+                <input type="hidden" name="url" value="/account/">
+                <button class="formbtn" type="submit">Login</button>
+                    </div>
+                </form>
