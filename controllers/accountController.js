@@ -16,7 +16,7 @@ async function buildRegister(req, res) {
 
 async function buildMyAccount(req, res){
     // get account data
-    
+    accountData = res.locals.accountData
 
     res.render("account/myAccount", {
         title: "My Account",
@@ -35,13 +35,13 @@ async function buildSchedule(req, res) {
         req.flash('error', 'You have no courses scheduled. Please add courses to your schedule.')
         res.redirect('/account')
     } else {
-        schedule = schedule[0]
+        schedules = schedule
         console.log('SCHEDULE BEFORE PAGE RENDER', schedule)
         res.render("account/schedule", {
             title: "My Schedule",
             link: "schedule",
             errors: null,
-            schedule
+            schedules
         })
     }
 }

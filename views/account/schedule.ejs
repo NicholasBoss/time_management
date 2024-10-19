@@ -85,7 +85,7 @@
                 <div id="w1a" class="hour" data-hour="1 AM"></div>
             </div>
         </div>
-        <div class="day" id="thurs">
+        <div class="day" id="thu">
             <h2>Thursday</h2>
             <div class="events">
                 <div id="th4a" class="hour" data-hour="4 AM"></div>
@@ -255,7 +255,7 @@ function getCourseDurationInHours(startTime, lengthInHours) {
 // Function to place the course info into the correct time slots
 function placeCourse(schedule) {
     // Extract course details
-    const { course_name, course_day_selection, course_start_time, course_length } = schedule;
+    const { course_name, course_day_selection, course_start_time, course_length, assignment_name, assignment_due_date } = schedule;
 
     // Ensure course_day_selection is an array
     const days = Array.isArray(course_day_selection) ? course_day_selection : course_day_selection.split(',');
@@ -288,8 +288,8 @@ function placeCourse(schedule) {
                 slot.innerHTML = `
                     <div class="course-info">
                         <p>${course_name}</p>
-                        <p>Start Time: ${course_start_time}</p>
-                        <p>Length: ${course_length} hours</p>
+                        <p>Time: ${course_start_time}</p>
+                        <p>Length: ${course_length} hour(s)</p>
                     </div>
                 `;
             }
@@ -298,17 +298,35 @@ function placeCourse(schedule) {
 }
 
 // Example course data using EJS variables
-const schedule = {
-    course_name: "<%= schedule.course_name %>",  // Inject EJS variable
-    course_day_selection: <%- JSON.stringify(schedule.course_day_selection) %>,  // Convert array to a JSON string
-    course_start_time: "<%= schedule.course_start_time %>",  // Adjusted to "9 AM" format or dynamic value
-    course_length: <%= schedule.course_length.hours %>,  // Injecting course length dynamically as a number
-    study_length: <%= schedule.study_length.hours %>,  // Injecting study length dynamically
-    assignment_name: "<%= schedule.assignment_name %>",  // Inject assignment name dynamically
-    assignment_due_date: "<%= schedule.assignment_due_date %>"  // Inject assignment due date dynamically
-};
+// Example course data using EJS variables
+const schedules = <%- JSON.stringify(schedules) %>;  // Inject EJS variable containing an array of schedules
+
+// Iterate over each schedule and place the course in the appropriate time slots
+schedules.forEach(schedule => {
+    const course = {
+        course_name: schedule.course_name,
+        course_day_selection: schedule.course_day_selection,
+        course_start_time: schedule.course_start_time,
+        course_length: schedule.course_length.hours,
+        study_length: schedule.study_length.hours,
+        assignment_name: schedule.assignment_name,
+        assignment_due_date: schedule.assignment_due_date
+    };
+
+    // Call the function to place the course in the appropriate time slots
+    placeCourse(course);
+});
+// const schedule = {
+//     course_name: "<%#= schedule.course_name %>",  // Inject EJS variable
+//     course_day_selection: <%#- JSON.stringify(schedule.course_day_selection) %>,  // Convert array to a JSON string
+//     course_start_time: "<%#= schedule.course_start_time %>",  // Adjusted to "9 AM" format or dynamic value
+//     course_length: <%#= schedule.course_length.hours %>,  // Injecting course length dynamically as a number
+//     study_length: <%#= schedule.study_length.hours %>,  // Injecting study length dynamically
+//     assignment_name: "<%#= schedule.assignment_name %>",  // Inject assignment name dynamically
+//     assignment_due_date: "<%#= schedule.assignment_due_date %>"  // Inject assignment due date dynamically
+// };
 
 // Call the function to place the course in the appropriate time slots
-placeCourse(schedule);
+// placeCourse(schedules);
 
 </script>
