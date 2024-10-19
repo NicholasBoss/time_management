@@ -34,7 +34,7 @@ Util.checkLogin = (req, res, next) => {
     next()
     } else {
         req.flash('error','Permission Denied. You are not authorized to view this page.')
-        return res.redirect('/account/login')
+        return res.redirect('/')
     }
 }
 

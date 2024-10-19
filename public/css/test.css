@@ -2,46 +2,92 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-      font-family: Arial, sans-serif;
-  }
-  
-  .calendar {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 10px;
-      padding: 20px;
-      height: 100vh;
-  }
-  
-  .day {
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
-      background-color: #f9f9f9;
-  }
-  
-  h2 {
-      font-size: 18px;
-      text-align: center;
-      background-color: #4CAF50;
-      color: white;
-      padding: 5px 0;
-      margin-bottom: 10px;
-  }
-  
-  .events {
-      height: calc(100% - 50px); /* Space for the header */
-      overflow-y: auto;
-  }
+}
+div a {
+    text-decoration: none;
+    color: black;  
+
+}
+a:hover {
+    color: #219ebcff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Light background color */
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+.day {
+    border: 0px solid #219ebcff;
+    border-radius: 4px;
+    padding: 12px;
+    background-color: #8ecae6ff;
+    color: #023047ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Make sure the day block fills the container */
+    overflow: hidden;
+}
+
+.hour {
+    border-top: 1px solid #8ecae6ff;
+    padding: 16px 0;
+    font-size: 10px;
+    text-align: left;
+    position: relative;
+    flex-grow: 1; /* Evenly space out each hour */
+    overflow: hidden;
+}
+
+.hour::before {
+    content: attr(data-hour);
+    position: absolute;
+    left: 5px;
+    font-size: 12px;
+    color: #023047ff;
+}
+
+
+h2 {
+    font-size: 18px;
+    text-align: center;
+    background-color: #219ebcff; /* Use your specified color */
+    color: black; /* Keep header text white for contrast */
+    padding: 5px 4px;
+    margin-bottom: 10px;
+}
+
+.events {
+    height: calc(100% - 50px); /* Space for the header */
+    overflow-y: auto;
+    background-color: white; /* Light background for events */
+}
 
 
 
-  /* Color Theme Swatches in Hex */
+/* CSS HEX */
+.Color-Theme-1-hex { color: #8ecae6ff; }
+.Color-Theme-1-hex { color: #219ebcff; }
+.Color-Theme-1-hex { color: #023047ff; }
+.Color-Theme-1-hex { color: #ffb703ff; }
+.Color-Theme-1-hex { color: #fb8500ff; }
+
+
+/* Color Theme Swatches in Hex */
 .Northern-Lights-1-hex { color: #164773; }
 .Northern-Lights-2-hex { color: #0B2B40; }
 .Northern-Lights-3-hex { color: #1E5959; }
 .Northern-Lights-4-hex { color: #3B8C6E; }
 .Northern-Lights-5-hex { color: #89D99D; }
+
+/* .user_schedule {
+    margin: auto;
+} */

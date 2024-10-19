@@ -1,0 +1,73 @@
+<h2>Hello <%= locals.accountData.account_firstname %> <%= locals.accountData.account_lastname %></h2>
+<%- messages()  %>
+<% if (errors) { %>
+<div class="container">
+    <h2>Account Information:</h2>
+    
+    <!-- Display current account information -->
+    <div id="account-info">
+        <p><strong>Name:</strong> <span id="display-name">John Doe</span></p>
+        <p><strong>Email:</strong> <span id="display-email">johndoe@example.com</span></p>
+        <p><strong>Password:</strong> <span id="display-password">*******</span></p> <!-- Placeholder for password -->
+        <button onclick="editInfo()">Edit Information</button>
+    </div>
+
+    <!-- Form to edit account information -->
+    <div id="edit-form" style="display: none;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="John Doe">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" value="johndoe@example.com">
+        
+        <label for="password">Password:</label>
+        <input type="text" id="password" value="*******"> <!-- Placeholder for password -->
+        
+        <button onclick="saveInfo()">Save</button>
+        <button onclick="cancelEdit()">Cancel</button>
+    </div>
+</div>
+
+<script>
+    // Function to show the edit form
+    function editInfo() {
+        document.getElementById('account-info').style.display = 'none';
+        document.getElementById('edit-form').style.display = 'block';
+    }
+
+    // Function to save the edited information
+    function saveInfo() {
+        // Get new values from input fields
+        const newName = document.getElementById('name').value;
+        const newEmail = document.getElementById('email').value;
+        const newPassword = document.getElementById('password').value;
+
+        // Update displayed information
+        document.getElementById('display-name').textContent = newName;
+        document.getElementById('display-email').textContent = newEmail;
+        document.getElementById('display-password').textContent = newPassword;
+
+        // Switch back to display mode
+        document.getElementById('account-info').style.display = 'block';
+        document.getElementById('edit-form').style.display = 'none';
+    }
+
+    // Function to cancel the edit
+    function cancelEdit() {
+        document.getElementById('account-info').style.display = 'block';
+        document.getElementById('edit-form').style.display = 'none';
+    }
+</script>
+    <ul class="errorList" class="notice error">
+
+        // Switch back to display mode
+        document.getElementById('account-info').style.display = 'block';
+        document.getElementById('edit-form').style.display = 'none';
+    }
+
+    // Function to cancel editing
+    function cancelEdit() {
+        document.getElementById('account-info').style.display = 'block';
+        document.getElementById('edit-form').style.display = 'none';
+    }
+</script>

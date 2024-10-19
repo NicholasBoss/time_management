@@ -4,6 +4,7 @@ baseController.buildHome = async function(req, res){
     res.render('index', {
         title: 'Home', 
         link: '', 
+        errors: null
     })
 }
 

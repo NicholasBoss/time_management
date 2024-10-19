@@ -1,0 +1,29 @@
+#title {
+    text-align: center;
+}
+#account_firstname {
+    margin: 1%;
+}
+#lname {
+    margin: 1%;
+}
+#email {
+    margin: 1%;
+}
+#password {
+    margin: 1%;
+}
+.container {
+    text-align: center;
+}
+#password_guide{
+    padding: 2%;
+    border: 2px solid black;
+}
+.restrictions {
+    margin: 3%;
+    list-style: none;
+}
+.formbtn {
+    padding: 1% 2%;
+}

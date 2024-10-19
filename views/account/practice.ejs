@@ -1,0 +1,18 @@
+<div class="schedule-card">
+    <div class="schedule-header">
+        <h3 class="course-name"><%= schedule.course_name %></h3>
+    </div>
+    <div class="schedule-body">
+        <p><strong>Course Info</strong></p>
+        <p><strong>Course Name:</strong> <%= schedule.course_name %></p>
+        <p><strong>Days:</strong> <%= schedule.course_day_selection %></p>
+        <p><strong>Time:</strong> <%= schedule.course_start_time %> - <%= schedule.course_end_time %></p>
+        
+        <p><strong>Study Time</strong></p>
+        <p><%= schedule.study_start_time %> - <%= schedule.study_end_time %></p>
+
+        <p><strong>Assignment Info</strong></p>
+        <p><strong>Assignment:</strong> <%= schedule.assignment_name %></p>
+        <p><strong>Due Date:</strong> <%= schedule.assignment_due_date %></p>
+    </div>
+</div>
