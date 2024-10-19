@@ -16,4 +16,12 @@ accountController.buildMyAccount = (req, res) => {
     })
 }
 
+accountController.buildSchedule = (req, res) => {
+    res.render("account/schedule", {
+        title: "Schedule",
+        link: "schedule",
+        errors: null,
+    })
+}
+
 module.exports = accountController

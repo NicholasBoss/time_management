@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+  }
+  
+  .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      padding: 20px;
+      height: 100vh;
+  }
+  
+  .day {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #f9f9f9;
+  }
+  
+  h2 {
+      font-size: 18px;
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 0;
+      margin-bottom: 10px;
+  }
+  
+  .events {
+      height: calc(100% - 50px); /* Space for the header */
+      overflow-y: auto;
+  }
+
+
+
+  /* Color Theme Swatches in Hex */
+.Northern-Lights-1-hex { color: #164773; }
+.Northern-Lights-2-hex { color: #0B2B40; }
+.Northern-Lights-3-hex { color: #1E5959; }
+.Northern-Lights-4-hex { color: #3B8C6E; }
+.Northern-Lights-5-hex { color: #89D99D; }
