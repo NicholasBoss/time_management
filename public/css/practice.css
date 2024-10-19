@@ -1,0 +1,31 @@
+.schedule-card {
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    margin-bottom: 20px;
+}
+
+.schedule-header {
+    background-color: #007bff; /* Blue header */
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.course-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.schedule-body p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.schedule-body strong {
+    color: #343a40; /* Dark text for labels */
+}

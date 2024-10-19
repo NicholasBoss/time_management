@@ -1,0 +1,49 @@
+<%- messages() %>
+    <% if (errors) { %>
+        <ul class="errorList" class="notice error">
+            <% errors.array().forEach(error=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+            <div class="container">
+
+
+                <form action="/account/study" method="post">
+                    <div class="user_study_times">
+                        <p>Enter the times when you can study:</p>
+                        <label><b>Select Available Days:</b><br>
+                            <input type="checkbox" name="study_selection" value="mon" class="mon"> Monday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="study_selection" value="tue" class="tue"> Tuesday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="study_selection" value="wed" class="wed"> Wednesday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="study_selection" value="thu" class="thu"> Thursday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="study_selection" value="fri" class="fri"> Friday<br>
+                        </label>
+                        <p>Enter the Start and End time of your study session</p><br>
+                        <label><b>Start Time: </b>
+                            <input type="time" name="study_start_time" class="courseStartTime">
+                        </label><br>
+                        <label><b>End Time: </b>
+                            <input type="time" name="study_end_time" class="courseEndTime">
+                        </label>
+                    </div>
+                    <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+                    <button class="formbtn" type="submit">Submit</button>
+                    <div class="formbtn">
+                        <a href="/account/schedule">Finish</a>
+                    </div>
+                    <div class="backbtn">
+                        <a href="/account/assignment">Back</a>
+                    </div>
+                </form>
+            </div>

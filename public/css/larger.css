@@ -1,4 +1,7 @@
 @media screen and (min-width: 900px) {
+    body {
+        max-width: 100%;
+    }
     #menu {
         display: none;
     }
@@ -17,5 +20,22 @@
     }
     nav ul li:nth-of-type(1){
         margin-top: unset;
+    }
+
+    .header_title {
+        display: block;
+    }
+
+    #header_container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #logo {
+        width: 25%;
+    }
+    .course-info {
+        text-align: right;
+        margin-top: 5%;
+        border: 2px solid black;
     }
 }

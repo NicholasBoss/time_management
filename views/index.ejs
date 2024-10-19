@@ -1,5 +1,13 @@
 <%- messages() %>
-
+<% if (errors) { %>
+    <ul id="errorList" class="notice error">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }) %>
+    </ul>
+    <% } %>
 <script src="/js/togglePass.js" defer></script>
     <form action="/account/login" method="post">
         <div class="container">

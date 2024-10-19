@@ -1,9 +1,15 @@
 <div id="header_container">
-    <img id="logo" src="/images/time_management.jpg" alt="Time Management Logo">
+    <a href="/account/schedule">
+        <img id="logo" src="/images/timemanagementlogolight.webp" alt="Time Management Logo">
+    </a>
     <h1 class="header_title"><%- title %></h1>
     <div id="button_area">
-        <a class="header_button" href="#">Register</a>
-        <a class="header_button" href="#">Login</a>
+        <% if (locals.accountData) { %>
+            <a class="headerButton" href="/account">My Account</a>
+            <a class="header_button" href="/account/logout">Logout</a>
+        <% } else { %>
+            <a class="headerButton" href="/account/register">Register</a>
+            <a class="header_button" href="/">Login</a>
+        <% } %>
     </div>
 </div>
-

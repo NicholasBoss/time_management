@@ -1,0 +1,57 @@
+<script src="/js/dataInput.js" defer></script>
+<div class="container">
+    <h1>Course Info</h1>
+    <%- messages() %>
+        <% if (errors) { %>
+            <ul class="errorList" class="notice error">
+                <% errors.array().forEach(error=> { %>
+                    <li>
+                        <%= error.msg %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %>
+                <p>Please enter in the course name below.</p>
+                <!-- repeat the following div 5 times -->
+                <form action="/account/data" method="post">
+                    <div class="user_schedule">
+                        <label><b>Course name:</b>
+                            <input type="text" class="user_course_name" name="course_name"
+                                placeholder="Enter Course Name" title="Course Name" value=""></label><br>
+                        <p>Please enter the number of credits you are taking this semester.</p>
+                        <label><b>Number of Course Credits:</b>
+                            <input type="number" min="1" max="5" class="num_course_credit" name="course_credit_amount"
+                                placeholder="Enter Number of Credits" title="Number of Credits" value="">
+                        </label><br>
+
+                        <p>Enter in which days you have your courses.</p>
+                        <label><b>Select Available Days:</b><br>
+                            <input type="checkbox" name="course_day_selection" value="mon" class="mon"> Monday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="course_day_selection" value="tue" class="tue"> Tuesday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="course_day_selection" value="wed" class="wed"> Wednesday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="course_day_selection" value="thu" class="thu"> Thursday<br>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="course_day_selection" value="fri" class="fri"> Friday<br>
+                        </label>
+                        <p>Enter in the Start time and End Time of each of your courses:</p><br>
+                        <label><b>Start Time: </b>
+                            <input type="time" name="course_start_time" class="courseStartTime">
+                        </label><br>
+                        <label><b>End Time: </b>
+                            <input type="time" name="course_end_time" class="courseEndTime">
+                        </label>
+                    </div>
+                    <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+                    <button class="formbtn" type="submit">Submit</button>
+                    <div class="formbtn">
+                        <a href="/account/assignment">Continue</a>
+                    </div>
+                </form>
+</div>

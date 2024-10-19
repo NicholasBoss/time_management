@@ -1,81 +1,207 @@
-:root{
+:root {
     /* Site Colors */
-    --primary-color: ;
-    --secondary-color: orange;
+    --primary-color: #023047;
+    --secondary-color: #8ecae6ff;
     --ham-color: var(--secondary-color);
+    --nav-hover-background-color: rgb(82, 180, 225);
+    --button-hover-color: #8ecae6;
+    --nav-bar-color: #219ebcff;
 }
 
-#menu {
-	font-size: 1.5rem;
-	border: 1px solid rgba(0, 0, 0, 0.3);
-	padding: 3px 7px 6px;
-	background-color: var(--ham-color);
-	color: #000;
-	position: absolute;
-	right: 1rem;
+body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+/* Header Container Styling */
+#header_container {
+    display: grid;
+	grid-template-columns: repeat(2, 1fr);                  /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out items */
+    align-items: center;           /* Center vertically */
+    padding: 10px 20px;            /* Adjust as necessary */
+    background-color: var(--primary-color);
+    width: 100%;
+}
+
+/* Logo Styling */
+#logo {
+    width: 80%;
+    margin-left: 10px; 
+    display: inline-block;
+}
+
+/* Title Styling */
+.header_title {
+	display: none;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+    grid-column: 2; /* Center it in the second column */
+}
+
+/* Navigation Bar */
+#menu {
+    font-size: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 3px 7px 6px;
+    background-color: var(--ham-color);
+    color: #000;
+    position: absolute;
+    right: 1rem;
+}
+
 
 .navigation {
-	display: flex;
-	flex-direction: column;
-	list-style: none;
-	background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background-color: var(--secondary-color);
 }
 .navigation li {
-	display: none;
-	
+    display: none;
+   
 }
 .navigation li a {
     color: var(--accent3-color);
-	display: block;
-	padding: 1rem;
-	text-align: center;
-	text-decoration: none;
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
 }
+
 
 .navigation li:hover {
     background-color: var(--nav-hover-background-color);
 }
 
+
 .open li {
-	display: block;
-	width: 100%;
+    display: block;
+    width: 100%;
     grid-row: 1/3;
-	
+   
 }
 .open li a {
-	display: block;
+    display: block;
     grid-row: 1/3;
 }
 
+
 #menu::before {
-	content: "☰";
+    content: "☰";
 }
+
 
 #menu.open::before {
-	content: "X";
+    content: "X";
 }
 
-#logo {
-	width: 15%;
-	/* margin: 50px; */
-	border-radius: 50%;
-}
 
-.header_title {
-	text-align: center;
-}
-
-#header_container {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-}
-
+/* Button Area Styling */
 #button_area {
-	margin: auto;
+    display: flex;
+    justify-content: flex-end; /* Aligns buttons to the right */
+    gap: 15px; /* Adds space between buttons */
+    margin-right: 15px; /* Right margin for spacing */
 }
 
+#button_area a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.headerButton,
 .header_button {
-	background-color: aqua;
+    background-color: #219ebcff;
+    transition: background-color 0.3s ease;
 }
 
+.headerButton:hover,
+.header_button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.dataContainer {
+	margin: 0 auto;
+}
+
+#passImg {
+    width: 1.75%;
+    
+}
+
+/* Errors List */
+.notice, .error{
+    max-width: 35%;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 2% auto;
+}
+.notice {
+    background-color: lightgreen;
+}
+.error {
+    background-color: lightcoral;
+}
+
+form {
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+#dt {
+    margin: 2% auto;
+}
+
+input[type=email], input[type=password], input[type=text], input[type=tel], input[type=date], input[type=time], textarea {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 2% auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=number] {
+    width: 66%;
+    margin: auto 2%;
+    padding: 2%;
+}
+
+.formbtn {
+    display: block;
+    background-color: var(--secondary-color);
+    color: var(--accent3-color);
+    padding: 1rem;
+    margin: 8px auto;
+    cursor: pointer;
+	width: 25%;
+	
+}
+.backbtn {
+	display: block;
+	background-color: var(--secondary-color);
+	color: var(--accent3-color);
+	padding: 1rem;
+	margin: 8px auto;
+	cursor: pointer;
+	width: 25%;
+}
+.container {
+	padding: 16px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* .formbtn {
+	padding: 2% 2%;
+} */

@@ -1,0 +1,46 @@
+<%- messages() %>
+    <% if (errors) { %>
+        <ul class="errorList" class="notice error">
+            <% errors.array().forEach(error=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+            <div class="container">
+
+
+                <h1>Assignments</h1>
+
+                <form action="/account/assignment" method="post">
+                    <!-- list out courses with the id as their value -->
+                    <label><b>Course:</b>
+                        <select name="course_id" id="course_id">
+                            <option value="">Select Course</option>
+                            <% locals.courses.forEach(course=> { %>
+                                <option value="<%= course.course_id %>">
+                                    <%= course.course_name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </label><br>
+                    <label><b>Assignment Name:</b>
+                        <input type="text" name="assignment_name" required placeholder="Enter Assignment Name"
+                            title="Assignment Name">
+                    </label><br>
+                    <label><b>Assignment Due Date:</b>
+                        <input type="date" name="assignment_due_date" required title="Assignment Due Date">
+                    </label><br>
+
+                    <input type="hidden" name="account_id" value="<%= locals.accountData.account_id %>">
+                    <button class="formbtn" type="submit">Submit</button>
+                    <div class="formbtn">
+                        <a href="/account/study">Continue</a>
+                    </div>
+                    <div class="backbtn">
+                        <a href="/account/course">Back</a>
+                    </div>
+                </form>
+            </div>
