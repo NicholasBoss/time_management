@@ -1,6 +1,14 @@
 <h2>Hello <%= locals.accountData.account_firstname %> <%= locals.accountData.account_lastname %></h2>
 <%- messages()  %>
 <% if (errors) { %>
+    <ul id="errorList" class="notice error">
+        <% errors.array().forEach(error=> { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }) %>
+    </ul>
+    <% } %>
 <div class="container">
     <h2>Account Information:</h2>
     
@@ -58,16 +66,4 @@
         document.getElementById('edit-form').style.display = 'none';
     }
 </script>
-    <ul class="errorList" class="notice error">
 
-        // Switch back to display mode
-        document.getElementById('account-info').style.display = 'block';
-        document.getElementById('edit-form').style.display = 'none';
-    }
-
-    // Function to cancel editing
-    function cancelEdit() {
-        document.getElementById('account-info').style.display = 'block';
-        document.getElementById('edit-form').style.display = 'none';
-    }
-</script>
