@@ -1,7 +1,7 @@
 :root{
     /* Site Colors */
     --primary-color: ;
-    --secondary-color: ;
+    --secondary-color: orange;
     --ham-color: var(--secondary-color);
 }
 
@@ -56,7 +56,26 @@
 	content: "X";
 }
 
-#computingLogo {
-	width: 50%;
-	margin: 50px;
+#logo {
+	width: 15%;
+	/* margin: 50px; */
+	border-radius: 50%;
 }
+
+.header_title {
+	text-align: center;
+}
+
+#header_container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#button_area {
+	margin: auto;
+}
+
+.header_button {
+	background-color: aqua;
+}
+
