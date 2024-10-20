@@ -115,7 +115,7 @@ async function addStudy(study_selection, study_start_time, study_end_time, accou
 
 async function getSchedule(account_id) {
     try {
-        const result = await pool.query('SELECT course_name, course_start_time, course_end_time, course_end_time - course_start_time AS course_length, assignment_name, assignment_due_date, study_start_time, study_end_time, study_end_time - study_start_time AS study_length, course_day_selection FROM course c LEFT JOIN assignment a ON c.course_id = a.course_id INNER JOIN account ac ON c.account_id = ac.account_id INNER JOIN study s ON ac.account_id = s.account_id WHERE ac.account_id = $1', [account_id])
+        const result = await pool.query('SELECT course_name, course_start_time, course_end_time, course_end_time - course_start_time AS course_length, assignment_name, assignment_due_date, study_start_time, study_end_time, study_end_time - study_start_time AS study_length, course_day_selection FROM course c LEFT JOIN assignment a ON c.course_id = a.course_id INNER JOIN account ac ON c.account_id = ac.account_id LEFT JOIN study s ON ac.account_id = s.account_id WHERE ac.account_id = $1', [account_id])
         console.log('Schedule:', result.rows)
         return result.rows
     } catch (error) {
